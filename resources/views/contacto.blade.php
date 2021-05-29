@@ -37,6 +37,7 @@
         <div class="row">
             <div class="col-md-12 d-flex justify-content-center">
                 @if($errors->any())
+
                 <div class="alert alert-danger" role="alert">
                     <ol>
                         @foreach ($errors->all() as $error)
@@ -44,6 +45,7 @@
                         @endforeach
                     </ol>
                  </div>
+
                  @endif
             </div>
         </div>

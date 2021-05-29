@@ -14,8 +14,9 @@ class MailController extends Controller
     }
 
     public function store(ContactoRequest $request){
-
         $email=new ContactoMaillable($request);
         Mail::to('jack20-21@hotmail.com')->send($email);
+
+        return view('email.emailEnviado');
     }
 }
