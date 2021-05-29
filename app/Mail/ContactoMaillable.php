@@ -32,6 +32,6 @@ class ContactoMaillable extends Mailable
      */
     public function build()
     {
-        return $this->view('email.email');
+        return $this->view('email.email')->red;
     }
 }
