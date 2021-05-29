@@ -1,12 +1,15 @@
 <?php
 
 use App\Http\Controllers\MailController;
+use App\Http\Controllers\ProductController;
 use Illuminate\Support\Facades\Route;
 
 
-Route::get('/', function () {
+/* Route::get('/', function () {
     return view('welcome');
-})->name('inicio.index');
+})->name('inicio.index'); */
+
+Route::get('/',[ProductController::class,'index'])->name('inicio.index');
 
 /* route::get('/Contacto',function(){
     return view('contacto');
