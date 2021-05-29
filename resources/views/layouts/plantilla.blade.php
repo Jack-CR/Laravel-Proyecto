@@ -26,10 +26,22 @@
                   <li class="nav-item">
                     <a class="nav-link" href="{{route('contacto.index')}}">Contacto</a>
                   </li>
+                  
+                  @auth
+
+                     <li class="nav-item">
+                    <a class="nav-link" href="{{route('dashboard')}}">Mis Productos</a>
+                  </li>
+
+                  @endauth
+                 
                 </ul>
-                <form class="d-flex">
-                  <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
-                  <button class="btn btn-outline-success" type="submit">Search</button>
+                <form class="d-flex" action="{{route('product.search','search')}}" method="GET">
+                  @csrf
+
+                  <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search" name="search">
+                  <button class="btn btn-outline-success" type="submit">Buscar</button>
+
                 </form> 
               </div>
               @auth

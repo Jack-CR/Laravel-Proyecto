@@ -17,7 +17,7 @@
                 <img src="storage/img/posts/{{$product->imagen}}" class="card-img-top" alt="...">
                 <div class="card-body">
                   <h5 class="card-title">{{$product->nombre}}</h5>
-                  <a href="#" class="btn btn-primary">Ver Producto</a>
+                  <a href="{{route('product.show',$product->id)}}" class="btn btn-primary">Ver Producto</a>
                 </div>
               </div> 
         </div>
