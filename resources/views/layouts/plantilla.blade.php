@@ -24,7 +24,7 @@
                     <a class="nav-link active" aria-current="page" href="{{route('inicio.index')}}">Home</a>
                   </li>
                   <li class="nav-item">
-                    <a class="nav-link" href="#">Link</a>
+                    <a class="nav-link" href="#">Contacto</a>
                   </li>
                    <li class="nav-item dropdown">
                     <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
@@ -41,38 +41,31 @@
                     <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Disabled</a>
                   </li>
                 </ul>
-                <form class="d-flex">
+               {{--  <form class="d-flex">
                   <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
                   <button class="btn btn-outline-success" type="submit">Search</button>
-                </form>
+                </form> --}}
               </div>
               @auth
                
-                 {{--  <a href="{{route('dashboard')}}"><label for="">{{Auth::user()->name}}</label></a> --}}
-                <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle"  id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                      {{Auth::user()->name}}
-                    </a>
-                    <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                      <li><a class="dropdown-item" href="{{route('profile.show')}}">Perfil</a></li>
-                      <li><a class="dropdown-item" href="{{route('dashboard')}}">Mis Productos</a></li>
-                      <li><hr class="dropdown-divider"></li>
-                      <li><a class="dropdown-item" href="#"></a>
-                        <form action="{{route('logout')}}" method="post">
-                            @csrf
-                            <button type="submit" class="btn btn-primary m-3">Cerrar Sessión</button>
-                        </form>
-                      </li>
-                    </ul>
-                  </li> 
-
-                 {{--  <form action="{{route('logout')}}" method="post">
-                    @csrf
-                    
-                     <button type="submit" class="btn btn-primary">Cerrar Sessión</button>
-                  </form> --}}
-                
-                
+                 <ul>
+                  <li class="nav-item dropdown">
+                      <a class="nav-link dropdown-toggle"  id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                        {{Auth::user()->name}}
+                      </a>
+                      <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                        <li><a class="dropdown-item" href="{{route('profile.show')}}">Perfil</a></li>
+                        <li><a class="dropdown-item" href="{{route('dashboard')}}">Mis Productos</a></li>
+                        <li><hr class="dropdown-divider"></li>
+                        <li><a class="dropdown-item" href="#"></a>
+                          <form action="{{route('logout')}}" method="post">
+                              @csrf
+                              <button type="submit" class="btn btn-danger m-3">Cerrar Sessión</button>
+                          </form>
+                        </li>
+                      </ul>
+                    </li> 
+                 </ul>
                  
                 @else
 
