@@ -5,12 +5,12 @@
 @section('container')
 <div class="container">
     <div class="row">
-        <div class="col">
-            
+        <div class="col-md-12 mt-5">
+            <h1 class="display-4">Mis productos</h1>
         </div>
     </div>
     <div class="row">
-        <div class="col-md-12">
+        <div class="col-md-12 mt-2">
             <table class="table">
                 <thead>
                   <tr>
@@ -18,16 +18,29 @@
                     <th scope="col">Nombre</th>
                     <th scope="col">Categoria</th>
                     <th scope="col">Imagen</th>
+                    <th scope="col">Eliminar</th>
+                    <th scope="col">Actualizar</th>
                   </tr>
                 </thead>
                 <tbody>
                     @foreach ($products as $product)
                     
                   <tr>
-                    <th scope="row"></th>
+                    <th scope="row">{{$product->id}}</th>
                     <td>{{$product->nombre}}</td>
                     <td>{{$product->categoria}}</td>
                     <td><img class="img-responsive" width="200" height="200" src="http://127.0.0.1:8000/storage/img/posts/{{$product->imagen}}" alt=""></td>
+                    
+                    <td>
+                      <form action="{{route('dashboard.destroy',$product->id)}}" method="POST">
+
+                        @csrf
+                        @method('DELETE')
+                        <button class="btn btn-danger" type="submit"><i class="bi bi-x-square-fill "></i></button>
+
+                      </form>
+                    </td>
+                    <td><a href=""><i class="bi bi-clipboard btn btn-primary"></i></a></td>
                   </tr>
                 
                   @endforeach
