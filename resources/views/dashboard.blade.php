@@ -40,7 +40,7 @@
 
                       </form>
                     </td>
-                    <td><a href=""><i class="bi bi-clipboard btn btn-primary"></i></a></td>
+                    <td><a href="{{route('dashboard.edit',$product->id)}}"><i class="bi bi-clipboard btn btn-primary"></i></a></td>
                   </tr>
                 
                   @endforeach

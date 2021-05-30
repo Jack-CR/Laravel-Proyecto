@@ -23,3 +23,5 @@ Route::post('/contacto',[MailController::class,'store'])->name('contacto.store')
 //controlador de productos de usuario ,insertar,actualizar,eliminar
 Route::get('/dashboard',[ProductPostController::class,'index'] )->name('dashboard'); 
 Route::delete('/dashboard/delete/{id}',[ProductPostController::class,'destroy'])->name('dashboard.destroy'); 
+Route::get('/{id}/edit',[ProductPostController::class,'edit'])->name('dashboard.edit');
+Route::put('/update/{id}',[ProductPostController::class,'update'])->name('dashboard.update');
