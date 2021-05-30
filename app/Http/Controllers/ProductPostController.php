@@ -34,7 +34,7 @@ class ProductPostController extends Controller
      */
     public function create()
     {
-        //
+        return view('addProduct');
     }
 
     /**
@@ -81,10 +81,14 @@ class ProductPostController extends Controller
      */
     public function update(Request $request, $id)
     {
-        $product=new Product();
-        $product->find($id);
+        $product=Product::findOrFail($id);
 
-        
+        $product->nombre=$request->nombre;
+        $product->categoria=$request->categoria; 
+
+        $product->save();
+
+        return redirect()->route('dashboard');
     }
 
     /**

@@ -1,12 +1,12 @@
 @extends('layouts.plantilla')
 
-@section('title','Actualizar Producto')
+@section('title','Agregar Producto')
 
 @section('container')
 <div class="container  d-flex justify-content-center">
     <div class="row">
         <div class="col-md-8 mt-5">
-            <form action="{{route('dashboard.update',$products)}}" method="POST">
+            <form action="" method="POST">
 
                 @csrf
                 @method('PUT')
@@ -14,7 +14,7 @@
 
                 <div class="mb-3">
                   <label for="exampleInputEmail1" class="form-label">Nombre</label>
-                  <input type="text" class="form-control" value="{{$products->nombre}}" name="nombre">
+                  <input type="text" class="form-control" value="" name="nombre">
                 </div>
 
                 <div class="mb-3">

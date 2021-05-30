@@ -9,7 +9,12 @@
             <h1 class="display-4">Mis productos</h1>
         </div>
     </div>
-    <div class="row">
+    <div class="row mt-2">
+      <div class="col-md-2">
+        <a href="{{route('dashboard.create')}}"><button class="btn btn-primary">Agregar Producto</button></a>
+      </div>
+    </div>
+    <div class="row mt-2">
         <div class="col-md-12 mt-2">
             <table class="table">
                 <thead>
