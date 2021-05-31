@@ -26,3 +26,4 @@ Route::delete('/dashboard/delete/{id}',[ProductPostController::class,'destroy'])
 Route::get('/{id}/edit',[ProductPostController::class,'edit'])->name('dashboard.edit');
 Route::put('/update/{id}',[ProductPostController::class,'update'])->name('dashboard.update');
 Route::get('/create/product',[ProductPostController::class,'create'])->name('dashboard.create');
+Route::post('/create',[ProductPostController::class,'store'])->name('dashboard.store');

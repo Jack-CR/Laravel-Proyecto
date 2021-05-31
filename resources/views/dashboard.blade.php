@@ -31,7 +31,7 @@
                     @foreach ($products as $product)
                     
                   <tr>
-                    <th scope="row">{{$product->id}}</th>
+                    <th scope="row">{{$loop->index}}</th>
                     <td>{{$product->nombre}}</td>
                     <td>{{$product->categoria}}</td>
                     <td><img class="img-responsive" width="200" height="200" src="http://127.0.0.1:8000/storage/img/posts/{{$product->imagen}}" alt=""></td>

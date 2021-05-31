@@ -6,7 +6,6 @@ use App\Models\Product;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\DB;
-use Symfony\Component\Console\Input\Input;
 
 
 class ProductPostController extends Controller
@@ -47,7 +46,22 @@ class ProductPostController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $product=new Product();
+
+        if ($request->hasFile('imagen')) {
+            $photo = $request->file('imagen');
+            $photo_name = time() . $photo->getClientOriginalName();
+            $photo->move('storage/img/posts/', $photo_name);
+            $product->imagen = $photo_name;
+        }
+
+        $product->user_id=Auth::id();
+        $product->nombre = $request->nombre;
+        $product->categoria = $request->categoria;
+      
+        $product->save();
+
+        return "se guardo el producto";
     }
 
     /**
