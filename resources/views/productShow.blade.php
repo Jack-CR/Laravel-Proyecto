@@ -14,5 +14,24 @@
                   </div> 
            </div>
     </div>
+    <div class="row">
+      <div class="col-md-12 d-flex justify-content-center mt-5">
+          <h1>Comentarios</h1>
+      </div>
+      <div class="col-md-12 d-flex justify-content-center">
+
+        <form action="#" method="post">
+          @csrf
+
+          <div class="form-group">
+            <textarea name="" id="" cols="30" rows="4" name="coment"></textarea>
+          </div>
+            <div class="form-group">
+              <button class="btn btn-primary" type="submit">Comentar</button>
+            </div>
+            
+        </form>
+    </div>
+    </div>
 </div>
 @endsection
