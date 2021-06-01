@@ -7,9 +7,10 @@
     <div class="row">
             <div class="col-md-12 d-flex justify-content-center mt-5">
                 <div class="card" style="width: 18rem;">
-                    <img src="http://127.0.0.1:8000/storage/img/posts/{{$products->imagen}}" class="card-img-top" alt="...">
+                   <img src="http://127.0.0.1:8000/storage/img/posts/{{$products->imagen}}" class="card-img-top" alt="...">
                     <div class="card-body">
-                      <h5 class="card-title">{{$products->nombre}}</h5>
+                      <h5 class="card-title">{{$products->nombre}}</h5> 
+                     vendedor-> {{$products->user->name}}
                     </div>
                   </div> 
            </div>
@@ -17,6 +18,11 @@
     <div class="row">
       <div class="col-md-12 d-flex justify-content-center mt-5">
           <h1>Comentarios</h1>
+
+        @foreach ($products->coments as $product)
+          {{$product->message}}<br><br>
+        @endforeach
+        
       </div>
       <div class="col-md-12 d-flex justify-content-center">
 

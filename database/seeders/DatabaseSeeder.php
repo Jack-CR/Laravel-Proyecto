@@ -2,6 +2,7 @@
 
 namespace Database\Seeders;
 
+use App\Models\Coment;
 use App\Models\Product;
 use App\Models\User;
 use Illuminate\Database\Seeder;
@@ -21,7 +22,14 @@ class DatabaseSeeder extends Seeder
             'email'=>'jack20-21@hotmail.com',
             'password'=>bcrypt('12345')
         ]);
+
+        User::create([
+            'name'=>'Tatiana Sandoval Araya',
+            'email'=>'tati@gmail.com',
+            'password'=>bcrypt('12345')
+        ]);
         User::factory(7)->create();
         Product::factory(50)->create();
+        Coment::factory(30)->create();
     }
 }

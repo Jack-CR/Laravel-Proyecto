@@ -4,7 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Product;
 use Illuminate\Http\Request;
-
+use Illuminate\Support\Facades\DB;
 class ProductController extends Controller
 {
     public function index(){
@@ -14,9 +14,14 @@ class ProductController extends Controller
     }
 
     public function show($id){
-        $products=Product::find($id);
+       $products=Product::find($id); 
+     /*   $products=Product::select('products.imagen')
+                ->join('coments','products.id','=','coments.id_product')
+                ->where('products.id','=',$id)
+                ->get(); */
 
-        return view('productShow',compact('products'));
+      return view('productShow',compact('products'));  
+      /*  return $products;  */
     }
 
     public function search(Request $request){

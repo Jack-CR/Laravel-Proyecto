@@ -13,4 +13,12 @@ class Product extends Model
         'imagen'
     ];
     use HasFactory;
+
+    public function user(){
+        return $this->belongsTo(User::class);
+    }
+
+    public function coments(){
+        return $this->hasMany(Coment::class);
+    }
 }

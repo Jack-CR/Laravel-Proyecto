@@ -123,6 +123,6 @@ class ProductPostController extends Controller
         $product = Product::findOrFail($id);
         $product->delete();
 
-        return "se elimino";
+        return redirect()->route('dashboard');
     }
 }

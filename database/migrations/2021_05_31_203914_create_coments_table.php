@@ -16,8 +16,11 @@ class CreateComentsTable extends Migration
         Schema::create('coments', function (Blueprint $table) {
             $table->id();
 
-            $table->unsignedBigInteger('id_product');
-            $table->foreign('id_product')->references('id')->on('products');
+            $table->unsignedBigInteger('product_id');
+            $table->unsignedBigInteger('user_id');
+
+            $table->foreign('product_id')->references('id')->on('products');
+            $table->foreign('user_id')->references('id')->on('users');
             $table->text('message');
             $table->timestamps();
         });
