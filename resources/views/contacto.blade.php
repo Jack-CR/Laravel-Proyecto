@@ -4,7 +4,7 @@
 
 @section('container')
     <div class="container mt-5">
-        <div class="row">
+        <div class="row">{{-- FORMULARIO DE CONTACTO --}}
             <div class="col-md-12 d-flex justify-content-center">
                 <form class="bg-light mt-3" action="{{route('contacto.store')}}" method="post">
                     @csrf
@@ -34,14 +34,15 @@
                 </form>
             </div>
         </div>
-        <div class="row">
+        <div class="row mt-3">{{-- VALIDACION --}}
             <div class="col-md-12 d-flex justify-content-center">
                 @if($errors->any())
 
                 <div class="alert alert-danger" role="alert">
-                    <ol>
+                    <ol class="list-group list-group-numbered">
                         @foreach ($errors->all() as $error)
-                            <li>{{$error}}</li>
+                            <li class="list-group-item">{{ $error }}
+                            </li>
                         @endforeach
                     </ol>
                  </div>
