@@ -4,7 +4,7 @@
 
 @section('container')
     <div class="container">
-        <div class="row"> {{-- SECCION DEL PRODUCTO DEL USUARIO , INFO DE VENDEDOR --}}
+        <div class="row mt-3"> {{-- SECCION DEL PRODUCTO DEL USUARIO , INFO DE VENDEDOR --}}
             <div class=" col-md-12 d-flex align-items-center">
                 <div class="flex-shrink-0">
                     <img class="img-fluid" src="http://127.0.0.1:8000/storage/img/posts/{{ $products->imagen }}"

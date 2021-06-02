@@ -17,9 +17,9 @@ Route::get('/contacto', [MailController::class,'indexContacto'])->name('contacto
 Route::post('/contacto',[MailController::class,'store'])->name('contacto.store');
 
 //controlador de login,registros
-/* Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {
+Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {
     return view('dashboard');
-})->name('dashboard'); */
+})->name('dashboard'); 
 
 //controlador de productos de usuario ,insertar,actualizar,eliminar
 Route::get('/dashboard',[ProductPostController::class,'index'] )->name('dashboard'); 
