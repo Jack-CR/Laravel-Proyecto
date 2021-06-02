@@ -61,7 +61,7 @@ class ProductPostController extends Controller
       
         $product->save();
 
-        return "se guardo el producto";
+        return redirect()->route('dashboard');
     }
 
     /**
@@ -83,7 +83,6 @@ class ProductPostController extends Controller
     public function edit($id)
     {
         $products = Product::findOrfail($id);
-
         return view('updateProduct', compact('products'));
     }
 

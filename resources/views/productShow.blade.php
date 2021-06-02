@@ -3,40 +3,55 @@
 @section('title','Producto')
 
 @section('container')
-<div class="container"></div>
+<div class="container">
     <div class="row">
-            <div class="col-md-12 d-flex justify-content-center mt-5">
-                <div class="card" style="width: 18rem;">
-                   <img src="http://127.0.0.1:8000/storage/img/posts/{{$products->imagen}}" class="card-img-top" alt="...">
-                    <div class="card-body">
-                      <h5 class="card-title">{{$products->nombre}}</h5> 
-                     vendedor-> {{$products->user->name}}
-                    </div>
-                  </div> 
-           </div>
-    </div>
-    <div class="row">
-      <div class="col-md-12 d-flex justify-content-center mt-5">
-          <h1>Comentarios</h1>
-
-        @foreach ($products->coments as $product)
-          {{$product->message}}<br><br>
-        @endforeach
-        
-      </div>
-      <div class="col-md-12 d-flex justify-content-center">
-
-        <form action="#" method="post">
-          @csrf
-
-          <div class="form-group">
-            <textarea name="" id="" cols="30" rows="4" name="coment"></textarea>
-          </div>
-            <div class="form-group">
-              <button class="btn btn-primary" type="submit">Comentar</button>
+           <div class="d-flex align-items-center">
+            <div class="flex-shrink-0">
+              <img src="http://127.0.0.1:8000/storage/img/posts/{{$products->imagen}}" alt="imagen" width="500" height="600">
             </div>
+            <div class="flex-grow-1 ms-3">
+             <h1 class="display-6">Información de Vendedor</h1>
+                <label >{{$products->user->name}}</label>
+            </div>
+          </div>
+    </div>
+    <div class="row mt-5">
+      @foreach ($products->coments as $product)
+
+      <div class="col-md-12 d-flex justify-content-center mt-2">
+        <div class="card text-center">
+          <div class="card-header">
+            {{$product->user->name}}
+          </div>
+          <div class="card-body">
+            <p class="card-text text-justify">{{$product->message}}</p>
+          </div>
+          <div class="card-footer text-muted">
+            {{$product->created_at}}
+          </div>
+        </div>
+      </div>
+
+      @endforeach
+
+      <div class="row mt-2">
+        <div class="col-md-12 d-flex justify-content-center">
+
+          <form  action="{{route('product.coment')}}" method="POST">
+            @csrf
+
+            <div class="form-group">
+              <textarea  cols="60" rows="4" name="coment"></textarea>
+            </div>
+            <!--Caputurar el id del producto al que se le esta haciendo el comentario-->
+            <input type="hidden" value="{{$products->id}}" name="id_product">
             
-        </form>
+              <div class="form-group">
+                <button class="btn btn-primary" type="submit">Comentar</button>
+              </div>
+              
+          </form>
+      </div>
     </div>
     </div>
 </div>
