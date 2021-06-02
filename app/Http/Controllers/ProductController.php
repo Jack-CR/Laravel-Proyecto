@@ -30,11 +30,11 @@ class ProductController extends Controller
     //comentar publicaciones de los usuarios
     public function addComent(Request $request){
         $coment=new Coment();
-        $coment->product_id=$request->id_product;
+        $coment->product_id=$request->product_id;
         $coment->user_id=Auth::id();
         $coment->message=$request->coment;
 
         $coment->save();
-        return redirect()->route('inicio.index');
+        return redirect()->route('product.show',['id'=>$request->product_id])->with('success','Comentario Añadido');
     }
 }

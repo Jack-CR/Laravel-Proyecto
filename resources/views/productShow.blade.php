@@ -35,7 +35,18 @@
       @endforeach
 
       <div class="row mt-2">
-        <div class="col-md-12 d-flex justify-content-center">
+        <div class="col-md-6">
+          <!--START GALLERY-->
+
+          mas productos del usuario
+          @foreach ($products->user->products as $product)
+            <img src="http://127.0.0.1:8000/storage/img/posts/{{$product->imagen}}" alt="">
+          @endforeach
+         
+
+          <!--END GALLERY-->
+        </div>
+        <div class="col-md-6">
 
           <form  action="{{route('product.coment')}}" method="POST">
             @csrf
@@ -44,15 +55,28 @@
               <textarea  cols="60" rows="4" name="coment"></textarea>
             </div>
             <!--Caputurar el id del producto al que se le esta haciendo el comentario-->
-            <input type="hidden" value="{{$products->id}}" name="id_product">
-            
+            <input type="hidden" value="{{$products->id}}" name="product_id">
+
               <div class="form-group">
-                <button class="btn btn-primary" type="submit">Comentar</button>
+                @auth
+                  <button class="btn btn-primary" type="submit">Comentar</button>
+
+                  @else
+                  <div class="alert alert-primary" role="alert">
+                    Debes iniciar sessión o registrarte para poder realizar un comentario
+                  </div>
+                @endauth
               </div>
               
           </form>
+
+        </div>
       </div>
-    </div>
+      <div class="row">
+        <div class="col-md-6 d-flex justify-content-center">
+
+        </div>
+      </div>
     </div>
 </div>
 @endsection
