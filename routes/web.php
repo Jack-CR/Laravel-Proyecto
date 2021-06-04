@@ -11,6 +11,7 @@ Route::get('/',[ProductController::class,'index'])->name('inicio.index');
 Route::get('/product/{id}',[ProductController::class,'show'])->name('product.show');
 Route::get('/search/{buscar}',[ProductController::class,'search'])->name('product.search');
 Route::post('/coment',[ProductController::class,'addComent'])->name('product.coment');
+Route::get('/product/categoria/{categoria}',[ProductController::class,'categoria'])->name('product.categoria');
 
 //controlador de vista email y enviar correos
 Route::get('/contacto', [MailController::class,'indexContacto'])->name('contacto.index');

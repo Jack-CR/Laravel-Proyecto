@@ -29,6 +29,16 @@ class ProductController extends Controller
         return view('productSearch',compact('products'));
     }
 
+    //productos por categoria
+    public function categoria(Request $request){
+        $category=Category::all();
+        $products=DB::table('products')
+                    ->join('categories','products.category_id','=','categories.id')
+                    ->where('products.category_id','=',$request->id)
+                    ->get();
+        return view('productCategoria',compact('products','category'));
+    }
+
     //comentar publicaciones de los usuarios
     public function addComent(Request $request){
         $coment=new Coment();
