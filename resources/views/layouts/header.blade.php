@@ -1,4 +1,4 @@
-<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
     <div class="container-fluid">
         <a class="navbar-brand" href="{{ route('inicio.index') }}"><i class="bi bi-bootstrap"></i>
             Mercado Libre</a>
@@ -33,7 +33,7 @@
 
                 <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search"
                     name="search">
-                <button class="btn btn-outline-light" type="submit">Buscar</button>
+                <button class="btn btn-outline-dark" type="submit">Buscar</button>
 
             </form>
         </div>

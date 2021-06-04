@@ -2,6 +2,7 @@
 
 namespace Database\Seeders;
 
+use App\Models\Category;
 use App\Models\Coment;
 use App\Models\Product;
 use App\Models\User;
@@ -29,6 +30,7 @@ class DatabaseSeeder extends Seeder
             'password'=>bcrypt('12345')
         ]);
         User::factory(7)->create();
+        Category::factory(5)->create();
         Product::factory(50)->create();
         Coment::factory(30)->create();
     }

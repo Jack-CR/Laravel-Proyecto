@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Category;
 use App\Models\Coment;
 use App\Models\Product;
 use Illuminate\Http\Request;
@@ -12,7 +13,8 @@ class ProductController extends Controller
     //muestra todos los productos en pagina de inicio
     public function index(){
         $products=Product::paginate(8);
-        return view('welcome',compact('products'));
+        $category=Category::all();
+        return view('welcome',compact('products','category'));
     }
 
     //mostrar producto seleccionado en pagina de inicio

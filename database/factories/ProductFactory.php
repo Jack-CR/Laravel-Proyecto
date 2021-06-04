@@ -2,6 +2,7 @@
 
 namespace Database\Factories;
 
+use App\Models\Category;
 use App\Models\Product;
 use Illuminate\Database\Eloquent\Factories\Factory;
 use App\Models\User;
@@ -24,6 +25,7 @@ class ProductFactory extends Factory
     {
         return [
             'user_id'=>User::all()->random()->id,
+            'category_id'=>Category::all()->random()->id,
             'nombre'=>$this->faker->name(),
             'categoria'=>$this->faker->name(),
             'imagen'=>$this->faker->image('public/storage/img/posts',600,480,null,false)

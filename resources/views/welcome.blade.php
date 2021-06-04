@@ -12,27 +12,19 @@
             <div class="col-md-3">
                 <h1 class="display-6">Categorías</h1>
                 <ol class="list-group list-group-numbered">
+
+                    @foreach ($category as $categories)
+                        
+
                     <li class="list-group-item d-flex justify-content-between align-items-start">
                         <div class="ms-2 me-auto">
-                            <div class="fw-bold">Subheading</div>
-                            Cras justo odio
+                            <div class="fw-bold">{{$categories->nombre}}</div>
                         </div>
                         <span class="badge bg-primary rounded-pill">14</span>
                     </li>
-                    <li class="list-group-item d-flex justify-content-between align-items-start">
-                        <div class="ms-2 me-auto">
-                            <div class="fw-bold">Subheading</div>
-                            Cras justo odio
-                        </div>
-                        <span class="badge bg-primary rounded-pill">14</span>
-                    </li>
-                    <li class="list-group-item d-flex justify-content-between align-items-start">
-                        <div class="ms-2 me-auto">
-                            <div class="fw-bold">Subheading</div>
-                            Cras justo odio
-                        </div>
-                        <span class="badge bg-primary rounded-pill">14</span>
-                    </li>
+
+                    @endforeach
+
                 </ol>
             </div>
             @foreach ($products as $product)
