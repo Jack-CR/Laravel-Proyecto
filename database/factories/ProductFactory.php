@@ -23,11 +23,12 @@ class ProductFactory extends Factory
      */
     public function definition()
     {
+        $random_num=random_int(1000,10000);
         return [
             'user_id'=>User::all()->random()->id,
             'category_id'=>Category::all()->random()->id,
+            'precio'=>$random_num,
             'nombre'=>$this->faker->name(),
-            'categoria'=>$this->faker->name(),
             'imagen'=>$this->faker->image('public/storage/img/posts',600,480,null,false)
         ];
     }

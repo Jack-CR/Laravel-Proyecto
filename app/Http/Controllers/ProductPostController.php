@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Http\Requests\ProductRequest;
+use App\Models\Category;
 use App\Models\Product;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
@@ -84,7 +85,8 @@ class ProductPostController extends Controller
     public function edit($id)
     {
         $products = Product::findOrfail($id);
-        return view('updateProduct', compact('products'));
+        $category=Category::all();
+        return view('updateProduct', compact('products','category'));
     }
 
     /**

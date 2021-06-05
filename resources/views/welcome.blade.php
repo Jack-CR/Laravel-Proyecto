@@ -23,7 +23,6 @@
                                     <input type="hidden" value="{{$categories->id}}" name="id">
                                     <div class="fw-bold"><button type="submit"> {{ $categories->nombre }}</button></div>
                                 </div>
-                                <span class="badge bg-primary rounded-pill">14</span>
                             </li>
                         </form>
 

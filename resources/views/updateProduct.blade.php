@@ -20,9 +20,12 @@
                 <div class="mb-3">
                     <label for="exampleInputEmail1" class="form-label">Categoria</label>
                     <select class="form-select" name="categoria" >
-                        <option value="Electronica" selected>Electronica</option>
-                        <option value="VideoJuegos">VideoJuegos</option>
-                        <option value="Electrodomesticos">Electrodomesticos</option>
+                      
+                      @foreach ($category as $categories)
+
+                        <option value="{{$categories->nombre}}" selected>{{$categories->nombre}}</option>
+
+                      @endforeach
                       </select>
                   </div>
 

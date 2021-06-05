@@ -23,7 +23,7 @@ class CreateProductsTable extends Migration
             $table->foreign('category_id')->references('id')->on('categories');
 
             $table->string('nombre',30);
-            $table->string('categoria',30);
+            $table->float('precio');
             $table->string('imagen');
             $table->timestamps();
         });

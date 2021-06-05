@@ -21,13 +21,19 @@ class DatabaseSeeder extends Seeder
         User::create([
             'name'=>'Yacdany Arguedas Mora',
             'email'=>'jack20-21@hotmail.com',
-            'password'=>bcrypt('12345')
+            'password'=>bcrypt('12345'),
+            'telefono'=>'88888888',
+            'provincia'=>'Cartago',
+            'direccion'=>'cartago,turrialba'
         ]);
 
         User::create([
             'name'=>'Tatiana Sandoval Araya',
             'email'=>'tati@gmail.com',
-            'password'=>bcrypt('12345')
+            'telefono'=>'88888888',
+            'password'=>bcrypt('12345'),
+            'provincia'=>'Cartago',
+            'direccion'=>'cartago,turrialba'
         ]);
         User::factory(7)->create();
         Category::factory(5)->create();

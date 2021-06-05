@@ -30,8 +30,8 @@
 
     <!-- Copyright -->
     <div class="text-center text-dark p-3" style="background-color: rgba(0, 0, 0, 0.2);">
-        © {{date('Y')}} Copyright:
-        <a class="text-dark" href="#!">Mercado Libre</a>
+        © {{date('Y')}} 
+        <a class="text-dark" href="#!">Yacdany Arguedas Mora</a>
     </div>
     <!-- Copyright -->
 </footer>
