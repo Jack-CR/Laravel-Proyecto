@@ -10,13 +10,37 @@
             @csrf
 
             <div>
-                <x-jet-label for="name" value="{{ __('Name') }}" />
+                <x-jet-label for="name" value="{{ __('Nombre') }}" />
                 <x-jet-input id="name" class="block mt-1 w-full" type="text" name="name" :value="old('name')" required autofocus autocomplete="name" />
             </div>
 
             <div class="mt-4">
                 <x-jet-label for="email" value="{{ __('Email') }}" />
                 <x-jet-input id="email" class="block mt-1 w-full" type="email" name="email" :value="old('email')" required />
+            </div>
+
+            <div class="mt-4">
+                <x-jet-label for="telefono" value="{{__('Telefono')}}" />
+                <x-jet-input id="telefono" class="block mt-1 w-full" type="num" name="telefono" required autocomplete="new telefono" />
+            </div>
+
+            <div class="mt-4">
+                <x-jet-label for="direccion" value="{{__('Direccion')}}" />
+               {{--  <x-jet-textarea id="direccion" class="block mt-1 w-full" type="text" name="direccion" required autocomplete="new direccion" /> --}}
+               <textarea name="direccion" id="direccion" cols="45" rows="2"></textarea>
+            </div>
+
+            <div class="mt-4">
+                <x-jet-label for="direccion" value="{{__('Provincia')}}" />
+                <select class="form-select" aria-label="Default select example" name="provincia">
+                    <option value="Cartago">Cartago</option>
+                    <option value="Limon">Limon</option>
+                    <option value="San José">San josé</option>
+                    <option value="Guanacaste">Guanacaste</option>
+                    <option value="Puntarenas">Puntarenas</option>
+                    <option value="Heredia">Heredia</option>
+                    <option value="Alajuela">Alajuela</option>
+                  </select>
             </div>
 
             <div class="mt-4">

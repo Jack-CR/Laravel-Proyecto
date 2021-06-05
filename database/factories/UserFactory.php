@@ -32,7 +32,7 @@ class UserFactory extends Factory
             'remember_token' => Str::random(10),
             'telefono'=>$this->faker->phoneNumber,
             'provincia'=>$this->faker->text(10),
-            'direccion'=>$this->faker->text(25)
+            'direccion'=>$this->faker->sentence(25)
         ];
     }
 

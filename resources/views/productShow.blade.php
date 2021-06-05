@@ -10,14 +10,19 @@
                     <img class="img-fluid" src="http://127.0.0.1:8000/storage/img/posts/{{ $products->imagen }}"
                         alt="imagen" width="500" height="500">
                 </div>
-                <div class="flex-grow-1 ms-3">
+                <div class="flex-grow-1 ms-3  bg-light bg-gradient">
                     <h1 class="display-6">Información de Vendedor</h1>
-                    <label>{{ $products->user->name }}</label>
+                    <label>{{ $products->user->name }}</label><br>
+                    <label>{{ $products->user->provincia }}</label><br>
+                    <label>{{ $products->user->telefono }}</label><br>
+                    <label>{{ $products->user->direccion }}</label><br>
+                    {{$products->name}}
                 </div>
             </div>
         </div>
         <div class="row mt-2">{{-- MÁS PRODUCTOS DEL VENDEDOR --}}
             <!--START GALLERY-->
+            <h1 class="display-6">Mas productos del Vendedor</h1>
             @foreach ($products->user->products as $product)
                 <div class="col-md-3">
 

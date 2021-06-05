@@ -6,7 +6,7 @@
     <div class="container mt-5">
         <div class="row">{{-- FORMULARIO DE CONTACTO --}}
             <div class="col-md-12 d-flex justify-content-center">
-                <form class="bg-light mt-3" action="{{route('contacto.store')}}" method="post">
+                <form class="bg-light mt-3" action="{{route('contacto.store')}}" method="post" style="width: 24%;border:solid 1px gray;padding:5px;">
                     @csrf
                     <div class="form-group">
                       <label for="">Nombre:</label>

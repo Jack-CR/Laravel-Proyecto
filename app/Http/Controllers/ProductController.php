@@ -35,6 +35,7 @@ class ProductController extends Controller
         $products=DB::table('products')
                     ->join('categories','products.category_id','=','categories.id')
                     ->where('products.category_id','=',$request->id)
+                    ->select('products.*')
                     ->get();
         return view('productCategoria',compact('products','category'));
     }

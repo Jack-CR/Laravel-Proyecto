@@ -28,6 +28,7 @@ class ProductFactory extends Factory
             'user_id'=>User::all()->random()->id,
             'category_id'=>Category::all()->random()->id,
             'precio'=>$random_num,
+            'descripcion'=>$this->faker->sentence(25),
             'nombre'=>$this->faker->name(),
             'imagen'=>$this->faker->image('public/storage/img/posts',600,480,null,false)
         ];

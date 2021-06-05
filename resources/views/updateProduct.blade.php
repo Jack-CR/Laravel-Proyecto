@@ -23,7 +23,7 @@
                       
                       @foreach ($category as $categories)
 
-                        <option value="{{$categories->nombre}}" selected>{{$categories->nombre}}</option>
+                        <option value="{{$categories->id}}" selected>{{$categories->nombre}}</option>
 
                       @endforeach
                       </select>
@@ -40,4 +40,8 @@
         </div>
     </div>
 </div>
+@endsection
+
+@section('footer')
+  @include('layouts.footer')
 @endsection

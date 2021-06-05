@@ -20,8 +20,8 @@ class ProductPostController extends Controller
     public function index()
     {
         //DEVOLVER LOS PRODUCTOS QUE CORRESPONDEN AL USUARIO DE LA SESSION
-        $user = Auth::user();
-        $products = DB::table('products')
+        $user=Auth::user();
+        $products = Product::with('category')
             ->join('users', 'products.user_id', '=', 'users.id')
             ->where('products.user_id', '=', $user->id)
             ->select('products.*')
@@ -35,9 +35,11 @@ class ProductPostController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
+    /* Pagina para crear nuevos productos*/
     public function create()
     {
-        return view('addProduct');
+        $category=Category::all();
+        return view('addProduct',compact('category'));
     }
 
     /**
@@ -59,7 +61,7 @@ class ProductPostController extends Controller
 
         $product->user_id=Auth::id();
         $product->nombre = $request->nombre;
-        $product->categoria = $request->categoria;
+        $product->category_id = $request->categoria;
       
         $product->save();
 
@@ -108,7 +110,7 @@ class ProductPostController extends Controller
         }
 
         $product->nombre = $request->nombre;
-        $product->categoria = $request->categoria;
+        $product->category_id = $request->categoria;
       
         $product->save();
         return redirect()->route('dashboard')->with('success','iamgen creada');
